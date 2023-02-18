@@ -18,6 +18,11 @@ export const IntroContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 336px){
+    grid-template-columns: 1fr;
+    margin-top: 1.5rem;
+  }
 `;
 
 export const IntroContent = styled.div`
@@ -48,5 +53,6 @@ export const BenefitsContainer = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    margin-top: 1.5rem;
   }
 `;
