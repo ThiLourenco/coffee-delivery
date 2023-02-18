@@ -1,2 +1,1 @@
-# coffee-delivery
-ReactJS Project
+# CoffeeDelivery

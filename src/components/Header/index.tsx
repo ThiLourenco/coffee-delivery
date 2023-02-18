@@ -1,19 +1,33 @@
-import { HeaderContainer } from './styles'
-import logoCoffee from '../../assets/logo.svg'
+import { HeaderButton, HeaderButtonsContainer, HeaderContainer } from "./styles";
 
-export const Header = () => {
-  return (
-    <HeaderContainer>
-      <a href="">
-        <img src={logoCoffee} alt="" /> 
-      </a>
-      <div>
-        <div>
-          
-          <span>Rio de Janeiro - BR</span>
-        </div>
-      </div>
-    </HeaderContainer>
+import coffeeLogoImg from "../../assets/coffee-delivery-logo.svg";
+import { MapPin, ShoppingCart } from 'phosphor-react';
+import { NavLink } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
-  )
+export function Header() {
+    const {cartQuantity} = useCart();
+
+    return (
+        <HeaderContainer>
+            <div className="container">
+                <NavLink to="/">
+                    <img src={coffeeLogoImg} />
+                </NavLink>
+
+                <HeaderButtonsContainer>
+                    <HeaderButton variant="purple">
+                        <MapPin size={20} weight="fill" />
+                        Rio de Janeiro - RJ
+                    </HeaderButton>
+                    <NavLink to="/completeOrder">
+                        <HeaderButton variant="yellow" title="Acessar o Carrinho">
+                            {cartQuantity >= 1 && <span>{cartQuantity}</span>}
+                            <ShoppingCart size={20} weight="fill" />
+                        </HeaderButton>
+                    </NavLink>
+                </HeaderButtonsContainer>
+            </div>
+        </HeaderContainer>
+    )
 }
