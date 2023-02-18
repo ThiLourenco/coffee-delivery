@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -9,15 +9,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: ${({ theme }) => theme.colors["base-background"]};
-        color: ${({ theme }) => theme.colors["base-text"]};
+        background: ${({ theme }) => theme.colors['base-background']};
+        color: ${({ theme }) => theme.colors['base-text']};
         -webkit-font-smoothing: antialiased;
     }
 
     body, input, button, textarea, button {
         font-family: ${({ theme }) => theme.fonts.regular};
         font-weight: 400;
-        font-family: ${({ theme }) => theme.textSizes["text-regular-m"]};
+        font-family: ${({ theme }) => theme.textSizes['text-regular-m']};
     }
 
     button {
@@ -37,4 +37,4 @@ export const GlobalStyle = createGlobalStyle`
         -moz-appearance: textfield;
     }
 
-`;
+`

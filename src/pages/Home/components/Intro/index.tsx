@@ -3,16 +3,16 @@ import {
   IntroContainer,
   IntroContent,
   IntroTitle,
-} from './styles';
+} from './styles'
 
-import introImg from '../../../../assets/intro-img.png';
-import { RegularText } from '../../../../components/Typograph';
-import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
-import { InfoWithIcon } from '../../../../components/InfoWithIcon';
-import { useTheme } from 'styled-components';
+import introImg from '../../../../assets/intro-img.png'
+import { RegularText } from '../../../../components/Typograph'
+import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react'
+import { InfoWithIcon } from '../../../../components/InfoWithIcon'
+import { useTheme } from 'styled-components'
 
 export function Intro() {
-  const { colors } = useTheme();
+  const { colors } = useTheme()
 
   return (
     <IntroContainer>
@@ -54,5 +54,5 @@ export function Intro() {
         <img src={introImg} />
       </IntroContent>
     </IntroContainer>
-  );
+  )
 }
