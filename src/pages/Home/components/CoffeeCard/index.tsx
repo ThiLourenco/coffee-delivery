@@ -27,7 +27,7 @@ interface CoffeeProps {
 }
 
 export function CoffeeCard({ coffee }: CoffeeProps) {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
   const { addCoffeeToCart } = useCart()
 
   const isCoffeeSelected = quantity > 0
