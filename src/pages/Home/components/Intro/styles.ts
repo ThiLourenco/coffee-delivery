@@ -19,9 +19,9 @@ export const IntroContainer = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 336px){
+  @media (min-width: 320px){
     grid-template-columns: 1fr;
-    margin-top: 1.5rem;
+    margin-top: 5.5rem;
   }
 `;
 
@@ -33,7 +33,6 @@ export const IntroContent = styled.div`
 
   @media (max-width: 1000px) {
     flex-direction: column;
-
     img {
       display: none;
     }
@@ -53,6 +52,5 @@ export const BenefitsContainer = styled.div`
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
-    margin-top: 1.5rem;
   }
 `;
