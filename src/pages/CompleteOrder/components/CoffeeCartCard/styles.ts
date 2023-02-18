@@ -25,6 +25,14 @@ export const CoffeeCartCardContainer = styled.div`
     font-weight: 700;
   }
 
+  @media (min-width: 320px) {
+    width: 80%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
   @media (max-width: 400px){
     > div {
     display: flex;
@@ -37,8 +45,8 @@ export const CoffeeCartCardContainer = styled.div`
     }
   }
     > p {
-      align-self: flex-start;
       font-weight: 700;
+      display: 1;
     }
 
     display: flex;

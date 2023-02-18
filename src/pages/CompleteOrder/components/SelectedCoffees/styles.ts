@@ -15,12 +15,10 @@ export const DetailsContainer = styled(SectionBaseStyle)`
   display: flex;
   flex-direction: column;
 
-  @media (mix-width: 378px) {
+  @media (mix-width: 360px) {
     gap: 0.75;
     font-size: 80.5%;
     width: 85px;
-
-    img: 1rem;
   }
 `;
 
