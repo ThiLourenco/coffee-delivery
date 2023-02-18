@@ -14,6 +14,14 @@ export const DetailsContainer = styled(SectionBaseStyle)`
   border-radius: 6px 44px 6px 44px;
   display: flex;
   flex-direction: column;
+
+  @media (mix-width: 378px) {
+    gap: 0.75;
+    font-size: 80.5%;
+    width: 85px;
+
+    img: 1rem;
+  }
 `;
 
 export const ConfirmationSectionContainer = styled.section`

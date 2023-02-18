@@ -24,25 +24,25 @@ export const QuantityInputContainer = styled.div<QuantityInputContainerProps>`
       outline: none;
     }
   }
+  @media(max-width: 400px) {
 
-
-  ${({ size }) => size === 'medium' &&
-    css`
-     padding: 0.5rem
-
+    ${({ size }) => size === 'medium' &&
+      css`
+       padding: 0.1rem
+  
+      `}
+  
+      ${({ size }) => size === 'small' &&
+      css`
+       padding: 0.1rem 0.1rem;
     `}
-
-    ${({ size }) => size === 'small' &&
-    css`
-     padding: 0.3rem 0.5rem;
-
-    `}
+  }
 `;
 
 export const IconWrapper = styled.button.attrs({
   type: "button",
 })`
-  width: 0.875rem;
+  width: 1.875rem;
   height: 0.875rem;
   border: none;
   background: none;
@@ -54,5 +54,9 @@ export const IconWrapper = styled.button.attrs({
   }
   &:not(:disabled):hover {
     color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+  }
+
+  @media (max-width: 400px){   
+    font-size: 80.5%
   }
 `;
