@@ -1,24 +1,24 @@
-import { useFormContext } from 'react-hook-form';
-import { Input } from '../../../../components/Input';
-import { AddressFormContainer } from './styles';
+import { useFormContext } from 'react-hook-form'
+import { Input } from '../../../../components/Input'
+import { AddressFormContainer } from './styles'
 
 interface ErrosType {
   errors: {
     [key: string]: {
-      message: string;
-    };
-  };
+      message: string
+    }
+  }
 }
 
 export function AddressForm() {
-  const { register, formState } = useFormContext();
+  const { register, formState } = useFormContext()
 
-  const { errors } = formState as unknown as ErrosType;
+  const { errors } = formState as unknown as ErrosType
 
   return (
     <AddressFormContainer>
       <Input
-        placeholder='CEP'
+        placeholder="CEP"
         type="number"
         className="cep"
         {...register('cep')}
@@ -55,9 +55,10 @@ export function AddressForm() {
       />
       <Input
         placeholder="UF"
-       {...register('uf')}
-       type="string"
-       error={errors.uf?.message} />
+        {...register('uf')}
+        type="string"
+        error={errors.uf?.message}
+      />
     </AddressFormContainer>
-  );
+  )
 }

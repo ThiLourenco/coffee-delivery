@@ -1,14 +1,14 @@
-import { TitleText } from '../../../../components/Typograph';
-import { FormSectionContainer } from '../../styles';
-import { CompleteOrderFormContainer } from './styles';
-import { MapPinLine, CurrencyDollar } from 'phosphor-react';
-import { useTheme } from 'styled-components';
-import { SectionTitle } from '../SectionTitle';
-import { AddressForm } from './AddressForm';
-import { PaymentMethodOptions } from './PaymentMethodOptions';
+import { TitleText } from '../../../../components/Typograph'
+import { FormSectionContainer } from '../../styles'
+import { CompleteOrderFormContainer } from './styles'
+import { MapPinLine, CurrencyDollar } from 'phosphor-react'
+import { useTheme } from 'styled-components'
+import { SectionTitle } from '../SectionTitle'
+import { AddressForm } from './AddressForm'
+import { PaymentMethodOptions } from './PaymentMethodOptions'
 
 export function CompleteOrderForm() {
-  const { colors } = useTheme();
+  const { colors } = useTheme()
 
   return (
     <CompleteOrderFormContainer>
@@ -35,5 +35,5 @@ export function CompleteOrderForm() {
         <PaymentMethodOptions />
       </FormSectionContainer>
     </CompleteOrderFormContainer>
-  );
+  )
 }
