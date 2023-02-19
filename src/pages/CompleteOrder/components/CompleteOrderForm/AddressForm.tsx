@@ -25,56 +25,53 @@ interface IForm {
 
 export const AddressForm = ({ completeOrder }: IFormProps) => {
   
-  const { register, handleSubmit, formState, watch, setValue, setFocus } = useFormContext()
-  const [cepInfo, setCepInfo ] = useState<IForm>()
-  // const [cepInfo, setCepInfo ] = useState({ 
-  //   estate: '', 
-  //   city: '', 
-  //   street: '', 
-  //   district: '', 
-  // });
-  const [ isFetching, setFetching ] = useState(true)
-  const [ error, setError ] = useState<Error | null>(null)
+  const { register, handleSubmit, formState, watch } = useFormContext()
+  const [cepInfo, setCepInfo ] = useState({ 
+    estate: '', 
+    city: '', 
+    street: '', 
+    district: '', 
+  });
 
-  // const { estate, city, street, district } = cepInfo;
+  const { estate, city, street, district } = cepInfo;
 
   const cep = watch('cep');
   const isCepValid = /^[0-9]{5}-[0-9]{3}$/.test(cep);
 
   const { errors } = formState as unknown as ErrosType
   
-  // useEffect(() => {
-  //   const getCepInfo = async () => {
-  //     if (isCepValid) {
-  //       const resp = await db.get(`/${cep}/json`);
-  //       const newCepInfo = { estate: resp.data.uf, city: resp.data.localidade, district: resp.data.bairro, street: resp.data.logradouro };
-  //       setCepInfo(newCepInfo);
-  //     } else {
-  //       setCepInfo({ estate: '', city: '', street: '', district: '' });
-  //     }
-  //   };
-
-  //   getCepInfo();
-  // }, [watch('cep')]);
-
   useEffect(() => {
-    if(isCepValid) {
-      db.get(`/${cep}/json`)
-        .then(response => {
-          setCepInfo(response.data)
-          console.log(response.data)
-        })
-        .catch(err =>{
-          setError(err)
-        })
-        .finally(() => {
-          setFetching(false);
-        })
-    }
-  }, [])
+    const getCepInfo = async () => {
+      if (isCepValid) {
+        const resp = await db.get(`/${cep}/json`);
+        const newCepInfo = { estate: resp.data.uf, city: resp.data.localidade, district: resp.data.bairro, street: resp.data.logradouro };
+        setCepInfo(newCepInfo);
+      } else {
+        setCepInfo({ estate: '', city: '', street: '', district: '' });
+      }
+    };
+
+    getCepInfo();
+  }, [watch('cep')]);
+
+  // useEffect(() => {
+  //   if(isCepValid) {
+  //     db.get(`/${cep}/json`)
+  //       .then(response => {
+  //         setCepInfo(response.data)
+  //         console.log(response.data)
+  //       })
+  //       .catch(err =>{
+  //         setError(err)
+  //       })
+  //       .finally(() => {
+  //         setFetching(false);
+  //       })
+  //   }
+  // }, [])
 
   const handleCompleteOrder = (data: any) => {
-    const orderData = { ...data};
+    const orderData = { ...data, ...cepInfo};
     completeOrder(orderData)
   }
 
@@ -97,6 +94,7 @@ export const AddressForm = ({ completeOrder }: IFormProps) => {
         type="string"
         {...register('street')}
         error={errors.street?.message}
+        defaultValue={street}
         
       />
       <Input
@@ -115,7 +113,7 @@ export const AddressForm = ({ completeOrder }: IFormProps) => {
       <Input
         placeholder="Bairro"
         type="string"
-        
+        defaultValue={district}
         {...register('district')}
         error={errors.district?.message}
         
@@ -125,6 +123,7 @@ export const AddressForm = ({ completeOrder }: IFormProps) => {
         type="string"
         {...register('city')}
         error={errors.city?.message}
+        defaultValue={city}
         
       />
       <Input
@@ -132,6 +131,7 @@ export const AddressForm = ({ completeOrder }: IFormProps) => {
         {...register('uf')}
         type="string"
         error={errors.uf?.message}
+        defaultValue={estate}
         
       />
     </AddressFormContainer>
