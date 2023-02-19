@@ -7,7 +7,7 @@ import { SectionTitle } from '../SectionTitle'
 import { AddressForm } from './AddressForm'
 import { PaymentMethodOptions } from './PaymentMethodOptions'
 
-export function CompleteOrderForm() {
+export function CompleteOrderForm({completeOrder}: any) {
   const { colors } = useTheme()
 
   return (
@@ -23,7 +23,7 @@ export function CompleteOrderForm() {
           icon={<MapPinLine size={22} color={colors['brand-yellow-dark']} />}
         />
 
-        <AddressForm />
+        <AddressForm completeOrder={completeOrder} />
       </FormSectionContainer>
       <FormSectionContainer>
         <SectionTitle

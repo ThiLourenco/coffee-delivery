@@ -37,7 +37,7 @@ export function ConfirmationSection() {
         text="Confirmar pedido"
         disabled={cartQuantity == 0}
         type="submit"
-        title="Confirmar seu pedido"
+        title="Confirme o seu pedido!"
       />
     </ConfirmationSectionContainer>
   )

@@ -8,6 +8,7 @@ import { useTheme } from 'styled-components'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { OrderData } from '../CompleteOrder'
 import { useEffect } from 'react'
+import { paymentMethods } from '../CompleteOrder/components/CompleteOrderForm/PaymentMethodOptions'
 
 interface LocationType {
   state: OrderData
@@ -71,7 +72,8 @@ export function OrderConfirmedPage() {
               <RegularText>
                 Pagamento na entrega
                 <br />
-                <strong>Cartão de Crédito</strong>
+                
+                {<strong>{paymentMethods[state.paymentMethod].label}</strong>}
               </RegularText>
             }
           />
