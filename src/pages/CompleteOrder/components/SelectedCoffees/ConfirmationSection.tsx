@@ -10,6 +10,9 @@ export function ConfirmationSection() {
   const { cartItemsTotal, cartQuantity } = useCart()
   const cartTotal = DELIVERY_PRICE + cartItemsTotal
 
+  const isCartEmpty = cartQuantity <= 0
+  const priceDefault = 0
+
   const formattedItemsTotal = formatMoney(cartItemsTotal)
   const formattedCartTotal = formatMoney(cartTotal)
   const formattedDeliveryPrice = formatMoney(DELIVERY_PRICE)
@@ -29,15 +32,19 @@ export function ConfirmationSection() {
           Total
         </RegularText>
         <RegularText weight="700" color="subtitle" size="l">
-          R$ {formattedCartTotal}{' '}
+        R$ {isCartEmpty ? priceDefault : formattedCartTotal}
         </RegularText>
       </div>
 
       <Button
         text="Confirmar pedido"
-        disabled={cartQuantity == 0}
+        disabled={isCartEmpty}
         type="submit"
-        title="Confirme o seu pedido!"
+        title={
+          isCartEmpty 
+          ? 'Selecione um café para confirmar o seu pedido'
+          : 'Complete o seu pedido!'
+        }
       />
     </ConfirmationSectionContainer>
   )

@@ -27,3 +27,13 @@ export const ConfirmationSectionContainer = styled.section`
     justify-content: space-between;
   }
 `;
+
+export const WithoutCoffeeDivContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  p {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 1.3rem;
+    padding: 10.3rem 0;
+  }
+`
