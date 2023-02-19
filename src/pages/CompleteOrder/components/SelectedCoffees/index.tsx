@@ -1,7 +1,7 @@
 import { TitleText } from '../../../../components/Typograph'
 import { useCart } from '../../../../hooks/useCart'
 import { CoffeeCartCard } from '../CoffeeCartCard'
-import { ConfirmationSection } from './CorfirmationSection'
+import { ConfirmationSection } from './ConfirmationSection'
 import { DetailsContainer, SelectedCoffeesContainer } from './styles'
 
 export function SelectedCoffees() {

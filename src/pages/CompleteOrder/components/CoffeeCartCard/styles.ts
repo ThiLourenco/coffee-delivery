@@ -26,37 +26,11 @@ export const CoffeeCartCardContainer = styled.div`
   }
 
   @media (min-width: 320px) {
-    width: 80%;
+    width: 100%;
 
     display: flex;
-    align-items: center;
     justify-content: space-evenly;
-  }
-
-  @media (max-width: 400px){
-    > div {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    img {
-      width: 3.7rem;
-      height: 3.7rem;
-    }
-  }
-    > p {
-      font-weight: 700;
-      display: 1;
-    }
-
-    display: flex;
-    align-items: flex-end;
-    justify-items: flex-end;
-
-    gap: 0.75;
-    font-size: 80.5%
-
-  }
+  } 
 `;
 
 export const ActionsContainer = styled.div`
@@ -69,18 +43,6 @@ export const ActionsContainer = styled.div`
   > div {
     max-width: 4.5rem;
     height: 100%;
-  }
-
-  @media (max-width: 462px){
-    gap: 0.5rem;
-
-    > div {
-    max-width: 4.5rem;
-    height: 100%;
-    }
-
-    height: 2rem;
-    font-size: 80.5%
   }
 `;
 
@@ -101,11 +63,5 @@ export const RemoveButton = styled.button`
   }
   &:hover {
     background: ${({ theme }) => theme.colors["base-hover"]};
-  }
-
-  @media (max-width: 400px){   
-    gap: 0.5rem;
-    font-size: 80.5%
-
   }
 `;
