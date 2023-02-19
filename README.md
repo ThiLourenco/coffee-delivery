@@ -19,4 +19,3 @@ O objeto do projeto foi colocar em prática alguns conceitos aprendidos durante 
 - [React-hook-form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/) 
 - [Axios](https://axios-http.com/ptbr/docs/intro)
-
