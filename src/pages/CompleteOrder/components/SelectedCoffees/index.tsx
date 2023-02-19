@@ -1,8 +1,10 @@
+import { NavLink } from 'react-router-dom'
 import { TitleText } from '../../../../components/Typograph'
 import { useCart } from '../../../../hooks/useCart'
 import { CoffeeCartCard } from '../CoffeeCartCard'
 import { ConfirmationSection } from './ConfirmationSection'
 import { DetailsContainer, SelectedCoffeesContainer, WithoutCoffeeDivContainer } from './styles'
+import coffeeLogoImg from '../../../../assets/coffee-delivery-logo.svg'
 
 export function SelectedCoffees() {
   const { cartItems } = useCart()
@@ -18,7 +20,16 @@ export function SelectedCoffees() {
       <DetailsContainer>
         {isCartEmpty ? (
           <WithoutCoffeeDivContainer>
-            <p>nenhum café selecionado!</p>
+
+            <NavLink to="/">
+              <img src={coffeeLogoImg} />
+            </NavLink>
+            <p>nenhum café selecionado!
+            
+            
+            </p>
+
+            
           </WithoutCoffeeDivContainer> 
         ) : (
           cartItems.map((item) => {
