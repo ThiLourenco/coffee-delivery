@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { Header } from '../../components/Header'
 import { LayoutContainer } from './styles'
 
-export function DefaultTLayout() {
+export function DefaultLayout() {
   return (
     <LayoutContainer>
       <Header />

@@ -4,13 +4,16 @@
   <img src="./github/coffee_delivery.png">
 </div>
 
-### O projeto
+### Projeto
 
 A aplicação Coffee Delivery é o 2° Desafio do Ignite da Rocketseat. Esse é um projeto onde simulamos um e-commerce de vendas de café.
 
 O objeto do projeto foi colocar em prática alguns conceitos aprendidos durante o capitulo do curso.
 
 [Acesse o projeto clicando aqui](https://coffee-delivery-thilourenco.vercel.app/)
+
+### Layout
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
 ### Tecnologias 
 
