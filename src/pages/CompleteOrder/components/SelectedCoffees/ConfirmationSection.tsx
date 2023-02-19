@@ -5,13 +5,14 @@ import { formatMoney } from '../../../../utils/formatMoney'
 import { ConfirmationSectionContainer } from './styles'
 
 const DELIVERY_PRICE = 3.5
+const priceDefault = 0.00
 
 export function ConfirmationSection() {
   const { cartItemsTotal, cartQuantity } = useCart()
   const cartTotal = DELIVERY_PRICE + cartItemsTotal
 
   const isCartEmpty = cartQuantity <= 0
-  const priceDefault = 0
+  const totalPriceDefault =  formatMoney(priceDefault)
 
   const formattedItemsTotal = formatMoney(cartItemsTotal)
   const formattedCartTotal = formatMoney(cartTotal)
@@ -32,7 +33,7 @@ export function ConfirmationSection() {
           Total
         </RegularText>
         <RegularText weight="700" color="subtitle" size="l">
-        R$ {isCartEmpty ? priceDefault : formattedCartTotal}
+        R$ {isCartEmpty ? totalPriceDefault : formattedCartTotal}
         </RegularText>
       </div>
 

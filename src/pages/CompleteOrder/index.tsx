@@ -15,12 +15,12 @@ enum PaymentMethods {
 }
 
 const confirmOrderFormValidatorSchema = zod.object({
-  cep: zod.string().min(8, 'Informe apenas o número'),
+  cep: zod.string().regex(/^[0-9]{5}-[0-9]{3}$/,'Informe o CEP ex. 28900-000'),
   street: zod.string().min(1, 'Informe o endereço'),
-  number: zod.string().min(1, 'Informe o Número'),
+  number: zod.string().min(1, 'Informe o número'),
   complement: zod.string(),
-  district: zod.string().min(1, 'Informe o Bairro'),
-  city: zod.string().min(1, 'Informe a Cidade'),
+  district: zod.string().min(1, 'Informe o bairro'),
+  city: zod.string().min(1, 'Informe a cidade'),
   uf: zod.string().min(2, 'Estado'),
   paymentMethod: zod.nativeEnum(PaymentMethods, {
     errorMap: () => {

@@ -16,13 +16,6 @@ interface IFormProps {
   completeOrder: any;
 }
 
-interface IForm {
-   estate: string
-   city: string
-   street: string
-   district: string
-}
-
 export const AddressForm = ({ completeOrder }: IFormProps) => {
   
   const { register, handleSubmit, formState, watch } = useFormContext()
@@ -53,22 +46,6 @@ export const AddressForm = ({ completeOrder }: IFormProps) => {
 
     getCepInfo();
   }, [watch('cep')]);
-
-  // useEffect(() => {
-  //   if(isCepValid) {
-  //     db.get(`/${cep}/json`)
-  //       .then(response => {
-  //         setCepInfo(response.data)
-  //         console.log(response.data)
-  //       })
-  //       .catch(err =>{
-  //         setError(err)
-  //       })
-  //       .finally(() => {
-  //         setFetching(false);
-  //       })
-  //   }
-  // }, [])
 
   const handleCompleteOrder = (data: any) => {
     const orderData = { ...data, ...cepInfo};

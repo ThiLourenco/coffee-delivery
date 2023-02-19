@@ -36,4 +36,9 @@ export const WithoutCoffeeDivContainer = styled.div`
     font-size: 1.3rem;
     padding: 10.3rem 0;
   }
+
+  img {
+    width: 75%;
+  }
+
 `
